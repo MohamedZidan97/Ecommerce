@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zain", "Zain\Zain.csproj", "{714AD1CC-4145-46E3-AD40-CDB5AC847780}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8CD1FF61-E7CD-4CA3-B2E2-262F8324AB5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{FE65B45A-0C9C-4D3D-8600-8777CCEC6A1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{EEEE02EC-6FA0-44C0-94F3-C1039E7076C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{484D498B-0E29-42E1-B438-AE017CD90594}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zain.Application", "Zain.Application\Zain.Application.csproj", "{2D5ED02C-57F1-433B-B49F-11AE8B618733}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zain.Domain", "Zain.Domain\Zain.Domain.csproj", "{35A04F0A-D72E-40B1-8E59-C0B0CC83AF20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zain.Persistance", "Zain.Persistance\Zain.Persistance.csproj", "{07A7D606-E198-4F6D-A3E3-DE225190998E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{714AD1CC-4145-46E3-AD40-CDB5AC847780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714AD1CC-4145-46E3-AD40-CDB5AC847780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714AD1CC-4145-46E3-AD40-CDB5AC847780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714AD1CC-4145-46E3-AD40-CDB5AC847780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D5ED02C-57F1-433B-B49F-11AE8B618733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D5ED02C-57F1-433B-B49F-11AE8B618733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D5ED02C-57F1-433B-B49F-11AE8B618733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D5ED02C-57F1-433B-B49F-11AE8B618733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35A04F0A-D72E-40B1-8E59-C0B0CC83AF20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A04F0A-D72E-40B1-8E59-C0B0CC83AF20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A04F0A-D72E-40B1-8E59-C0B0CC83AF20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A04F0A-D72E-40B1-8E59-C0B0CC83AF20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A7D606-E198-4F6D-A3E3-DE225190998E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A7D606-E198-4F6D-A3E3-DE225190998E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A7D606-E198-4F6D-A3E3-DE225190998E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A7D606-E198-4F6D-A3E3-DE225190998E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{714AD1CC-4145-46E3-AD40-CDB5AC847780} = {FE65B45A-0C9C-4D3D-8600-8777CCEC6A1B}
+		{FE65B45A-0C9C-4D3D-8600-8777CCEC6A1B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{EEEE02EC-6FA0-44C0-94F3-C1039E7076C0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{484D498B-0E29-42E1-B438-AE017CD90594} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{2D5ED02C-57F1-433B-B49F-11AE8B618733} = {EEEE02EC-6FA0-44C0-94F3-C1039E7076C0}
+		{35A04F0A-D72E-40B1-8E59-C0B0CC83AF20} = {EEEE02EC-6FA0-44C0-94F3-C1039E7076C0}
+		{07A7D606-E198-4F6D-A3E3-DE225190998E} = {484D498B-0E29-42E1-B438-AE017CD90594}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10C28C2D-2EDB-46C7-BD66-383D38BD5D73}
+	EndGlobalSection
+EndGlobal

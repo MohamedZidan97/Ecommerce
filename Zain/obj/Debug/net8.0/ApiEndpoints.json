@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "Zain.Controllers.User.AccountUserController",
+    "Method": "get",
+    "RelativePath": "api/client/AccountUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Zain.Controllers.Client.AccountClientController",
+    "Method": "Login",
+    "RelativePath": "api/user/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Zain.Application.Features.Account.AccountDto\u002BAccountGetTokenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Zain.Controllers.Client.AccountClientController",
+    "Method": "Register",
+    "RelativePath": "api/user/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Zain.Application.Features.Account.AccountDto\u002BAccountRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
