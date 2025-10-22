@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MoZ5xn9ImUs=",
+  "dgSpecHash": "8Jp6kDoKcwA=",
   "success": true,
-  "projectFilePath": "G:\\Zain\\Zain.Persistance\\Zain.Persistance.csproj",
+  "projectFilePath": "G:\\Zain\\Ecommerce\\Zain.Persistance\\Zain.Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AL-Motahida\\.nuget\\packages\\automapper\\15.0.1\\automapper.15.0.1.nupkg.sha512",
     "C:\\Users\\AL-Motahida\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -91,9 +91,9 @@
       "code": "NU1608",
       "level": "Warning",
       "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 15.0.1 was resolved.",
-      "projectPath": "G:\\Zain\\Zain.Persistance\\Zain.Persistance.csproj",
+      "projectPath": "G:\\Zain\\Ecommerce\\Zain.Persistance\\Zain.Persistance.csproj",
       "warningLevel": 1,
-      "filePath": "G:\\Zain\\Zain.Persistance\\Zain.Persistance.csproj",
+      "filePath": "G:\\Zain\\Ecommerce\\Zain.Persistance\\Zain.Persistance.csproj",
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net8.0"

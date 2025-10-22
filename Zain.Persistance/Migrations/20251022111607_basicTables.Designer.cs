@@ -12,8 +12,8 @@ using Zain.Persistance;
 namespace Zain.Persistance.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251014195819_first")]
-    partial class first
+    [Migration("20251022111607_basicTables")]
+    partial class basicTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

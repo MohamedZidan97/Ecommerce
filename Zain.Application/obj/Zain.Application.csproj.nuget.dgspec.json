@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Zain\\Zain.Application\\Zain.Application.csproj": {}
+    "G:\\Zain\\Ecommerce\\Zain.Application\\Zain.Application.csproj": {}
   },
   "projects": {
-    "G:\\Zain\\Zain.Application\\Zain.Application.csproj": {
+    "G:\\Zain\\Ecommerce\\Zain.Application\\Zain.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Zain\\Zain.Application\\Zain.Application.csproj",
+        "projectUniqueName": "G:\\Zain\\Ecommerce\\Zain.Application\\Zain.Application.csproj",
         "projectName": "Zain.Application",
-        "projectPath": "G:\\Zain\\Zain.Application\\Zain.Application.csproj",
+        "projectPath": "G:\\Zain\\Ecommerce\\Zain.Application\\Zain.Application.csproj",
         "packagesPath": "C:\\Users\\AL-Motahida\\.nuget\\packages\\",
-        "outputPath": "G:\\Zain\\Zain.Application\\obj\\",
+        "outputPath": "G:\\Zain\\Ecommerce\\Zain.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "G:\\Zain\\Zain.Domain\\Zain.Domain.csproj": {
-                "projectPath": "G:\\Zain\\Zain.Domain\\Zain.Domain.csproj"
+              "G:\\Zain\\Ecommerce\\Zain.Domain\\Zain.Domain.csproj": {
+                "projectPath": "G:\\Zain\\Ecommerce\\Zain.Domain\\Zain.Domain.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "G:\\Zain\\Zain.Domain\\Zain.Domain.csproj": {
+    "G:\\Zain\\Ecommerce\\Zain.Domain\\Zain.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Zain\\Zain.Domain\\Zain.Domain.csproj",
+        "projectUniqueName": "G:\\Zain\\Ecommerce\\Zain.Domain\\Zain.Domain.csproj",
         "projectName": "Zain.Domain",
-        "projectPath": "G:\\Zain\\Zain.Domain\\Zain.Domain.csproj",
+        "projectPath": "G:\\Zain\\Ecommerce\\Zain.Domain\\Zain.Domain.csproj",
         "packagesPath": "C:\\Users\\AL-Motahida\\.nuget\\packages\\",
-        "outputPath": "G:\\Zain\\Zain.Domain\\obj\\",
+        "outputPath": "G:\\Zain\\Ecommerce\\Zain.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

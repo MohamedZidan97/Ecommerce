@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Zain.Controllers.User
 {
-    [Route("api/client/[controller]")]
+    [Route("api/user/[controller]")]
     [ApiController]
     public class AccountUserController : ControllerBase
     {

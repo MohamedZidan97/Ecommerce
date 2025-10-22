@@ -242,18 +242,19 @@ namespace Zain.Persistance.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("UpdateAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("CartId");
 
-                    b.HasIndex("CustomerId")
+                    b.HasIndex("UserId")
                         .IsUnique();
 
                     b.ToTable("carts");
@@ -312,38 +313,6 @@ namespace Zain.Persistance.Migrations
                     b.ToTable("categories");
                 });
 
-            modelBuilder.Entity("Zain.Domain.Entities.Customer", b =>
-                {
-                    b.Property<int>("CustomerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CustomerId");
-
-                    b.ToTable("customers");
-                });
-
             modelBuilder.Entity("Zain.Domain.Entities.Invoice", b =>
                 {
                     b.Property<int>("InvoiceId")
@@ -383,18 +352,19 @@ namespace Zain.Persistance.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<int>("OrderItemsNumber")
                         .HasColumnType("int");
 
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("OrderId");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("orders");
                 });
@@ -574,86 +544,150 @@ namespace Zain.Persistance.Migrations
 
             modelBuilder.Entity("Zain.Domain.Entities.Cart", b =>
                 {
-                    b.HasOne("Zain.Domain.Entities.Customer", null)
-                        .WithOne()
-                        .HasForeignKey("Zain.Domain.Entities.Cart", "CustomerId")
+                    b.HasOne("Zain.Domain.Entities.ApplicationUser", "User")
+                        .WithOne("Cart")
+                        .HasForeignKey("Zain.Domain.Entities.Cart", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Zain.Domain.Entities.CartItem", b =>
                 {
-                    b.HasOne("Zain.Domain.Entities.Cart", null)
-                        .WithMany()
+                    b.HasOne("Zain.Domain.Entities.Cart", "Cart")
+                        .WithMany("CartItems")
                         .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Zain.Domain.Entities.Product", null)
-                        .WithMany()
+                    b.HasOne("Zain.Domain.Entities.Product", "Product")
+                        .WithMany("CartItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Cart");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Zain.Domain.Entities.Invoice", b =>
                 {
-                    b.HasOne("Zain.Domain.Entities.Payment", null)
-                        .WithOne()
+                    b.HasOne("Zain.Domain.Entities.Payment", "Payment")
+                        .WithOne("Invoice")
                         .HasForeignKey("Zain.Domain.Entities.Invoice", "PaymentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Payment");
                 });
 
             modelBuilder.Entity("Zain.Domain.Entities.Order", b =>
                 {
-                    b.HasOne("Zain.Domain.Entities.Customer", null)
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
+                    b.HasOne("Zain.Domain.Entities.ApplicationUser", "User")
+                        .WithMany("Orders")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Zain.Domain.Entities.OrderItem", b =>
                 {
-                    b.HasOne("Zain.Domain.Entities.Order", null)
-                        .WithMany()
+                    b.HasOne("Zain.Domain.Entities.Order", "Order")
+                        .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Zain.Domain.Entities.Product", null)
-                        .WithMany()
+                    b.HasOne("Zain.Domain.Entities.Product", "Product")
+                        .WithMany("OrderItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Zain.Domain.Entities.Payment", b =>
+                {
+                    b.HasOne("Zain.Domain.Entities.Order", "Order")
+                        .WithOne("Payment")
+                        .HasForeignKey("Zain.Domain.Entities.Payment", "OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("Zain.Domain.Entities.Product", b =>
+                {
+                    b.HasOne("Zain.Domain.Entities.SubCategory", "SubCategory")
+                        .WithMany("Products")
+                        .HasForeignKey("SubCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SubCategory");
+                });
+
+            modelBuilder.Entity("Zain.Domain.Entities.SubCategory", b =>
+                {
+                    b.HasOne("Zain.Domain.Entities.Category", "Category")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Zain.Domain.Entities.ApplicationUser", b =>
+                {
+                    b.Navigation("Cart")
+                        .IsRequired();
+
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("Zain.Domain.Entities.Cart", b =>
+                {
+                    b.Navigation("CartItems");
+                });
+
+            modelBuilder.Entity("Zain.Domain.Entities.Category", b =>
+                {
+                    b.Navigation("SubCategories");
+                });
+
+            modelBuilder.Entity("Zain.Domain.Entities.Order", b =>
+                {
+                    b.Navigation("OrderItems");
+
+                    b.Navigation("Payment")
                         .IsRequired();
                 });
 
             modelBuilder.Entity("Zain.Domain.Entities.Payment", b =>
                 {
-                    b.HasOne("Zain.Domain.Entities.Order", null)
-                        .WithOne()
-                        .HasForeignKey("Zain.Domain.Entities.Payment", "OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.Navigation("Invoice")
                         .IsRequired();
                 });
 
             modelBuilder.Entity("Zain.Domain.Entities.Product", b =>
                 {
-                    b.HasOne("Zain.Domain.Entities.SubCategory", null)
-                        .WithMany()
-                        .HasForeignKey("SubCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("CartItems");
+
+                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("Zain.Domain.Entities.SubCategory", b =>
                 {
-                    b.HasOne("Zain.Domain.Entities.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

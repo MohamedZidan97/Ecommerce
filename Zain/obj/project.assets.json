@@ -4551,11 +4551,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Zain\\Zain\\Zain.csproj",
+      "projectUniqueName": "G:\\Zain\\Ecommerce\\Zain\\Zain.csproj",
       "projectName": "Zain",
-      "projectPath": "G:\\Zain\\Zain\\Zain.csproj",
+      "projectPath": "G:\\Zain\\Ecommerce\\Zain\\Zain.csproj",
       "packagesPath": "C:\\Users\\AL-Motahida\\.nuget\\packages\\",
-      "outputPath": "G:\\Zain\\Zain\\obj\\",
+      "outputPath": "G:\\Zain\\Ecommerce\\Zain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4576,14 +4576,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "G:\\Zain\\Zain.Application\\Zain.Application.csproj": {
-              "projectPath": "G:\\Zain\\Zain.Application\\Zain.Application.csproj"
+            "G:\\Zain\\Ecommerce\\Zain.Application\\Zain.Application.csproj": {
+              "projectPath": "G:\\Zain\\Ecommerce\\Zain.Application\\Zain.Application.csproj"
             },
-            "G:\\Zain\\Zain.Domain\\Zain.Domain.csproj": {
-              "projectPath": "G:\\Zain\\Zain.Domain\\Zain.Domain.csproj"
+            "G:\\Zain\\Ecommerce\\Zain.Domain\\Zain.Domain.csproj": {
+              "projectPath": "G:\\Zain\\Ecommerce\\Zain.Domain\\Zain.Domain.csproj"
             },
-            "G:\\Zain\\Zain.Persistance\\Zain.Persistance.csproj": {
-              "projectPath": "G:\\Zain\\Zain.Persistance\\Zain.Persistance.csproj"
+            "G:\\Zain\\Ecommerce\\Zain.Persistance\\Zain.Persistance.csproj": {
+              "projectPath": "G:\\Zain\\Ecommerce\\Zain.Persistance\\Zain.Persistance.csproj"
             }
           }
         }

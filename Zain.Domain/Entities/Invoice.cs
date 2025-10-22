@@ -15,6 +15,7 @@ namespace Zain.Domain.Entities
         public DateTime CreatedAt { get; set; }
 
         public int PaymentId { get; set; }
+        public Payment Payment { get; set; }
 
         public int OrderItemsNumber { get; set; }
     }

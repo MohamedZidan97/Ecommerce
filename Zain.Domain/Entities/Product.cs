@@ -20,5 +20,9 @@ namespace Zain.Domain.Entities
             get; set;
 
         }
+        public SubCategory SubCategory { get; set; }
+        public ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+
     }
 }

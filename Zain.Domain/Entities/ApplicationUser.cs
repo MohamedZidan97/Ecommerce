@@ -11,5 +11,8 @@ namespace Zain.Domain.Entities
     {
         public string FullName { get; set; }
         public string TypeUser { get; set; } // user , client
+        public Cart Cart { get; set; }
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
+
     }
 }

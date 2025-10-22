@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Zain.Persistance.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class basicTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

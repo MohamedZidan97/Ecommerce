@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Zain.Domain\Zain.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Clients\" />
+  </ItemGroup>
+
 </Project>

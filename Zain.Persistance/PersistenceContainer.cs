@@ -11,8 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zain.Application.Contracts;
-using Zain.Application.IUnitOfWork;
-using Zain.Persistance.UnitOfWork;
 using Zain.Domain.Entities;
 using Zain.Domain.TokenEntities;
 using Zain.Persistance;

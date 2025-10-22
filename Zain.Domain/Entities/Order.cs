@@ -14,8 +14,12 @@ namespace Zain.Domain.Entities
 
         public int  OrderItemsNumber {  get; set; }
 
-        public int CustomerId { get; set; }
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
 
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+
+        public Payment Payment { get; set; }
 
     }
 }

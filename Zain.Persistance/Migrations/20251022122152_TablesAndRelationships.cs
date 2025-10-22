@@ -6,11 +6,34 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Zain.Persistance.Migrations
 {
     /// <inheritdoc />
-    public partial class AllTablesAndRelationships : Migration
+    public partial class TablesAndRelationships : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "carts",
+                columns: table => new
+                {
+                    CartId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CartItemsNumber = table.Column<int>(type: "int", nullable: false),
+                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_carts", x => x.CartId);
+                    table.ForeignKey(
+                        name: "FK_carts_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateTable(
                 name: "categories",
                 columns: table => new
@@ -26,20 +49,25 @@ namespace Zain.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "customers",
+                name: "orders",
                 columns: table => new
                 {
-                    CustomerId = table.Column<int>(type: "int", nullable: false)
+                    OrderId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    OrderItemsNumber = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_customers", x => x.CustomerId);
+                    table.PrimaryKey("PK_orders", x => x.OrderId);
+                    table.ForeignKey(
+                        name: "FK_orders_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -64,47 +92,25 @@ namespace Zain.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "carts",
+                name: "payments",
                 columns: table => new
                 {
-                    CartId = table.Column<int>(type: "int", nullable: false)
+                    PaymentId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CartItemsNumber = table.Column<int>(type: "int", nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    PaymentMethod = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsPaid = table.Column<bool>(type: "bit", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CustomerId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_carts", x => x.CartId);
-                    table.ForeignKey(
-                        name: "FK_carts_customers_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "customers",
-                        principalColumn: "CustomerId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "orders",
-                columns: table => new
-                {
                     OrderId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    OrderItemsNumber = table.Column<int>(type: "int", nullable: false),
-                    CustomerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_orders", x => x.OrderId);
+                    table.PrimaryKey("PK_payments", x => x.PaymentId);
                     table.ForeignKey(
-                        name: "FK_orders_customers_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "customers",
-                        principalColumn: "CustomerId",
+                        name: "FK_payments_orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "orders",
+                        principalColumn: "OrderId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -132,25 +138,24 @@ namespace Zain.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "payments",
+                name: "invoices",
                 columns: table => new
                 {
-                    PaymentId = table.Column<int>(type: "int", nullable: false)
+                    InvoiceId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PaymentMethod = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsPaid = table.Column<bool>(type: "bit", nullable: false),
+                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    OrderId = table.Column<int>(type: "int", nullable: false)
+                    PaymentId = table.Column<int>(type: "int", nullable: false),
+                    OrderItemsNumber = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_payments", x => x.PaymentId);
+                    table.PrimaryKey("PK_invoices", x => x.InvoiceId);
                     table.ForeignKey(
-                        name: "FK_payments_orders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "orders",
-                        principalColumn: "OrderId",
+                        name: "FK_invoices_payments_PaymentId",
+                        column: x => x.PaymentId,
+                        principalTable: "payments",
+                        principalColumn: "PaymentId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -212,28 +217,6 @@ namespace Zain.Persistance.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "invoices",
-                columns: table => new
-                {
-                    InvoiceId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PaymentId = table.Column<int>(type: "int", nullable: false),
-                    OrderItemsNumber = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_invoices", x => x.InvoiceId);
-                    table.ForeignKey(
-                        name: "FK_invoices_payments_PaymentId",
-                        column: x => x.PaymentId,
-                        principalTable: "payments",
-                        principalColumn: "PaymentId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_cartItems_CartId",
                 table: "cartItems",
@@ -245,9 +228,9 @@ namespace Zain.Persistance.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_carts_CustomerId",
+                name: "IX_carts_UserId",
                 table: "carts",
-                column: "CustomerId",
+                column: "UserId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -267,9 +250,9 @@ namespace Zain.Persistance.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_CustomerId",
+                name: "IX_orders_UserId",
                 table: "orders",
-                column: "CustomerId");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_payments_OrderId",
@@ -314,9 +297,6 @@ namespace Zain.Persistance.Migrations
 
             migrationBuilder.DropTable(
                 name: "subCategories");
-
-            migrationBuilder.DropTable(
-                name: "customers");
 
             migrationBuilder.DropTable(
                 name: "categories");

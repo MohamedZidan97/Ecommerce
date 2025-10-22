@@ -13,7 +13,10 @@ namespace Zain.Domain.Entities
         public decimal TotalPrice { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdateAt { get; set; }
-        public int CustomerId { get; set; }
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
+
+        public ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 
     }
 }

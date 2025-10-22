@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i6kTzkcCki8=",
+  "dgSpecHash": "/WcsdTBDyCs=",
   "success": true,
-  "projectFilePath": "G:\\Zain\\Zain.Application\\Zain.Application.csproj",
+  "projectFilePath": "G:\\Zain\\Ecommerce\\Zain.Application\\Zain.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AL-Motahida\\.nuget\\packages\\automapper\\15.0.1\\automapper.15.0.1.nupkg.sha512",
     "C:\\Users\\AL-Motahida\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -34,9 +34,9 @@
       "code": "NU1608",
       "level": "Warning",
       "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 15.0.1 was resolved.",
-      "projectPath": "G:\\Zain\\Zain.Application\\Zain.Application.csproj",
+      "projectPath": "G:\\Zain\\Ecommerce\\Zain.Application\\Zain.Application.csproj",
       "warningLevel": 1,
-      "filePath": "G:\\Zain\\Zain.Application\\Zain.Application.csproj",
+      "filePath": "G:\\Zain\\Ecommerce\\Zain.Application\\Zain.Application.csproj",
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net8.0"

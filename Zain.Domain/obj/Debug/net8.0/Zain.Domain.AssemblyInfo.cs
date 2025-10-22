@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Zain.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5add22ff0e6c4d2e61855f711b6004e66a300ddf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Zain.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Zain.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -23,7 +23,7 @@ namespace Zain.Application
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            services.AddScoped<ICustomerServices, CustomerServices>();
+            services.AddScoped<IProductServices, ProductServices>();
 
             return services;
         }

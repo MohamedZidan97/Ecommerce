@@ -10,3 +10,16 @@ G:\Zain\Zain.Domain\obj\Debug\net8.0\Zain.Domain.dll
 G:\Zain\Zain.Domain\obj\Debug\net8.0\refint\Zain.Domain.dll
 G:\Zain\Zain.Domain\obj\Debug\net8.0\Zain.Domain.pdb
 G:\Zain\Zain.Domain\obj\Debug\net8.0\ref\Zain.Domain.dll
+G:\Zain\Ecommerce\Zain.Domain\bin\Debug\net8.0\Zain.Domain.deps.json
+G:\Zain\Ecommerce\Zain.Domain\bin\Debug\net8.0\Zain.Domain.dll
+G:\Zain\Ecommerce\Zain.Domain\bin\Debug\net8.0\Zain.Domain.pdb
+G:\Zain\Ecommerce\Zain.Domain\obj\Debug\net8.0\Zain.Domain.csproj.AssemblyReference.cache
+G:\Zain\Ecommerce\Zain.Domain\obj\Debug\net8.0\Zain.Domain.GeneratedMSBuildEditorConfig.editorconfig
+G:\Zain\Ecommerce\Zain.Domain\obj\Debug\net8.0\Zain.Domain.AssemblyInfoInputs.cache
+G:\Zain\Ecommerce\Zain.Domain\obj\Debug\net8.0\Zain.Domain.AssemblyInfo.cs
+G:\Zain\Ecommerce\Zain.Domain\obj\Debug\net8.0\Zain.Domain.csproj.CoreCompileInputs.cache
+G:\Zain\Ecommerce\Zain.Domain\obj\Debug\net8.0\Zain.Domain.sourcelink.json
+G:\Zain\Ecommerce\Zain.Domain\obj\Debug\net8.0\Zain.Domain.dll
+G:\Zain\Ecommerce\Zain.Domain\obj\Debug\net8.0\refint\Zain.Domain.dll
+G:\Zain\Ecommerce\Zain.Domain\obj\Debug\net8.0\Zain.Domain.pdb
+G:\Zain\Ecommerce\Zain.Domain\obj\Debug\net8.0\ref\Zain.Domain.dll
